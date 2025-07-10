@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VSTREET – India’s Own Influence Network</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
@@ -17,6 +14,38 @@
       background-color: #ffffff;
       color: #1e1e1e;
       line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff7c00;
     }
 
     .hero-banner {
@@ -37,7 +66,6 @@
       color: #555;
       max-width: 720px;
       margin: 0 auto 40px auto;
-      line-height: 1.6;
     }
 
     .cta-button {
@@ -52,18 +80,68 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
       display: inline-block;
+      margin: 10px;
     }
 
     .cta-button:hover {
       transform: scale(1.05);
     }
 
-    @media (max-width: 600px) {
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.05em;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+
+    .video-box {
+      max-width: 720px;
+      margin: 20px auto;
+      aspect-ratio: 16/9;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
       .hero-content h1 {
         font-size: 1.8em;
       }
 
-      .hero-content .subheadline {
+      .hero-content .subheadline,
+      .section p {
         font-size: 1em;
         padding: 0 10px;
       }
@@ -71,14 +149,72 @@
   </style>
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#"><img src="https://via.placeholder.com/150x40?text=VSTREET" alt="VSTREET Logo"></a>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#team">Team</a>
+      <a href="#investors">Investors</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
   <section class="hero-banner">
     <div class="hero-content">
       <h1>India’s Own Influence Network</h1>
       <p class="subheadline">
-        The Indian evolution of K Street, Silicon Valley, and Madison Avenue — built for voice, influence, and independent growth.
+        The Indian evolution of concepts like K Street, Silicon Valley, and Madison Avenue — built for voice, influence, and independent growth.
       </p>
       <a href="https://forms.gle/your-google-form-link" class="cta-button">Request Invite</a>
     </div>
   </section>
+
+  <section class="section" id="products">
+    <h2>Indian Reputation Management Plan</h2>
+    <p>
+      A discreet, invite-only service built for high-impact Indians — entrepreneurs, public figures, and risk-takers. Protect your name, amplify your intent, and build a clean, lasting digital legacy.
+    </p>
+    <a href="https://rzp.io/l/your-payment-link" class="cta-button">Pay ₹4,999 to Join</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About VSTREET</h2>
+    <p>
+      VSTREET.IN is India’s answer to global influence networks. We bring together reputation, media, compliance, and digital protection — built with Indian values at the core.
+    </p>
+  </section>
+
+  <section class="section" id="team">
+    <h2>Our Team</h2>
+    <p>
+      A group of independent thinkers, creators, strategists, and protectors who understand both Bharat and the world stage.
+    </p>
+  </section>
+
+  <section class="section" id="investors">
+    <h2>For Investors</h2>
+    <p>
+      We are building a mission-led, impact-first platform. For aligned investors and allies who want to grow with us, reach out privately.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Email: connect@vstreet.in  
+      <br/>Social: Coming Soon
+    </p>
+  </section>
+
+  <footer>
+    VSTREET.IN is a project rooted in Indian values. Hosted securely on Cloudflare.
+    <br/>© 2025 VSTREET.IN
+  </footer>
+
 </body>
 </html>
