@@ -28,8 +28,15 @@
       z-index: 1000;
     }
 
-    .navbar-logo img {
-      height: 40px;
+    .text-logo {
+      font-size: 1.5em;
+      font-weight: 700;
+      background: linear-gradient(to right, #ff7c00, #ff3d00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      letter-spacing: 1px;
+      user-select: none;
     }
 
     .nav-links {
@@ -50,7 +57,7 @@
 
     .hero-banner {
       background-color: #f7f7f7;
-      padding: 80px 20px;
+      padding: 80px 20px 60px;
       text-align: center;
       border-bottom: 1px solid #e0e0e0;
     }
@@ -65,7 +72,19 @@
       font-size: 1.2em;
       color: #555;
       max-width: 720px;
-      margin: 0 auto 40px auto;
+      margin: 0 auto 30px auto;
+    }
+
+    .video-box {
+      max-width: 720px;
+      margin: 0 auto 30px auto;
+      aspect-ratio: 16/9;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .cta-button {
@@ -80,7 +99,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
       display: inline-block;
-      margin: 10px;
+      margin-top: 10px;
     }
 
     .cta-button:hover {
@@ -102,18 +121,6 @@
       color: #444;
       max-width: 800px;
       margin: 0 auto 20px auto;
-    }
-
-    .video-box {
-      max-width: 720px;
-      margin: 20px auto;
-      aspect-ratio: 16/9;
-    }
-
-    .video-box iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
     }
 
     footer {
@@ -152,13 +159,12 @@
 
   <nav class="navbar">
     <div class="navbar-logo">
-      <a href="#"><img src="https://via.placeholder.com/150x40?text=VSTREET" alt="VSTREET Logo"></a>
+      <a href="#"><span class="text-logo">VSTREET</span></a>
     </div>
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#about">About</a>
       <a href="#products">Products</a>
-      <a href="#story">Story</a>
       <a href="#team">Team</a>
       <a href="#investors">Investors</a>
       <a href="#contact">Contact Us</a>
@@ -171,6 +177,13 @@
       <p class="subheadline">
         The Indian evolution of concepts like K Street, Silicon Valley, and Madison Avenue — built for voice, influence, and independent growth.
       </p>
+      <div class="video-box">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="VSTREET Story Video"
+          allowfullscreen>
+        </iframe>
+      </div>
       <a href="https://forms.gle/your-google-form-link" class="cta-button">Request Invite</a>
     </div>
   </section>
@@ -181,17 +194,6 @@
       A discreet, invite-only service built for high-impact Indians — entrepreneurs, public figures, and risk-takers. Protect your name, amplify your intent, and build a clean, lasting digital legacy.
     </p>
     <a href="https://rzp.io/l/your-payment-link" class="cta-button">Pay ₹4,999 to Join</a>
-  </section>
-
-  <section class="section" id="story">
-    <h2>Watch the Story</h2>
-    <div class="video-box">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        title="VSTREET Story Video" 
-        allowfullscreen>
-      </iframe>
-    </div>
   </section>
 
   <section class="section" id="about">
