@@ -28,16 +28,24 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
-    .text-logo {
-      font-size: 1.5em;
-      font-weight: 700;
-      background: linear-gradient(to right, #ff7c00, #ff3d00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-      letter-spacing: 1px;
+    /* Logo styling */
+    .navbar-logo svg {
+      width: 180px;
+      height: auto;
+    }
+
+    /* Hidden checkbox for menu toggle */
+    #menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
       user-select: none;
     }
 
@@ -110,25 +118,26 @@
       border-top: 1px solid #eee;
     }
 
+    /* Mobile styles */
     @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 30px;
       }
 
       .nav-links {
+        display: none;
         flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        width: 100%;
+        background: #fff;
+        padding: 10px 30px;
+        border-top: 1px solid #eee;
       }
 
-      .hero-content h1 {
-        font-size: 1.8em;
-      }
-
-      .hero-content .subheadline {
-        font-size: 1em;
-        padding: 0 10px;
+      #menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
       }
     }
   </style>
@@ -137,8 +146,18 @@
 
   <nav class="navbar">
     <div class="navbar-logo">
-      <a href="#"><span class="text-logo">VSTREET</span></a>
+      <a href="#">
+        <svg viewBox="0 0 340 80" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="63" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#0a2a73">V</text>
+          <text x="42" y="58" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#0a2a73">STREET</text>
+          <line x1="42" y1="66" x2="219" y2="66" stroke="#f57c00" stroke-width="4" stroke-dasharray="20,6"/>
+        </svg>
+      </a>
     </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">☰</label>
+
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#about">About</a>
@@ -153,11 +172,10 @@
     <div class="hero-content">
       <h1>India’s Own Influence Promenade</h1>
       <p class="subheadline">
-      Where concepts like K Street, Silicon Valley, and Madison Avenue evolve to meet Indian clarity, rooted values, and a vision for visibility, credibility, and strategic growth.
+        Where concepts like K Street, Silicon Valley, and Madison Avenue evolve to meet Indian clarity, rooted values, and a vision for visibility, credibility, and strategic growth.
       </p>
     </div>
 
-    <!-- Full-width SVG -->
     <div class="svg-box">
       <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 300px;">
         <path d="M0,200 C200,100 600,300 800,200" fill="none" stroke="#4a4a4a" stroke-width="60" stroke-linecap="round"/>
