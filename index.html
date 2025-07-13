@@ -253,58 +253,43 @@
 <section style="background-color: #ffffff; padding: 60px 20px 0;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
 
-    <!-- Left: Description and CTA -->
-    <div style="flex: 1 1 60%; padding-right: 20px;">
-      <h2 style="font-size: 2em; font-weight: 600; margin-bottom: 10px; text-align: left; color: #1e1e1e;">
+    <!-- Left: Text + CTA -->
+    <div id="club-text" style="flex: 1 1 60%; padding-right: 20px; text-align: left;">
+      <h2 style="font-size: 2em; font-weight: 600; margin-bottom: 10px; color: #1e1e1e;">
         Our First Landmark: The VSTREET Club
       </h2>
-      <p style="font-size: 1.1em; color: #555; text-align: left; max-width: 640px; margin-bottom: 20px; line-height: 1.6;">
+      <p style="font-size: 1.1em; color: #555; max-width: 640px; margin-bottom: 20px; line-height: 1.6;">
         The VSTREET Club is an invite-only circle of high-network individuals from diverse sectors. It offers a reputation safety-net, mutual support, and a trusted space for those navigating critical scrutiny that often accompanies success and responsibilities.
       </p>
-      <a href="#"
-         style="display: inline-block; padding: 12px 24px; background: linear-gradient(to right, #002147, #0a2a73); color: #fff;
-                text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1em;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-                transition: all 0.25s ease-in-out;">
-        Request Invitation
-      </a>
+      <div style="text-align: left;">
+        <a id="cta-button" href="#"
+           style="display: inline-block; padding: 12px 24px; background: linear-gradient(to right, #002147, #0a2a73); color: #fff;
+                  text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1em;
+                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                  transition: all 0.25s ease-in-out;">
+          Request Invitation
+        </a>
+      </div>
     </div>
 
-    <!-- Right: Club Building SVG -->
-    <div style="flex: 1 1 35%; text-align: center; padding-top: 20px;">
-      <svg viewBox="0 0 1024 1024" style="width: 100%; max-width: 300px; height: auto;" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-        <!-- Building Background -->
+    <!-- Right: Building SVG -->
+    <div id="club-building" style="flex: 1 1 35%; text-align: center; padding-top: 20px;">
+      <svg viewBox="0 0 1024 1024" style="width: 80%; max-width: 240px; height: auto;" xmlns="http://www.w3.org/2000/svg">
         <rect x="64" y="96" width="896" height="928" fill="#EAEAEA"/>
-        
-        <!-- Tower Center -->
         <rect x="416" y="768" width="192" height="256" fill="#1a237e"/>
         <rect x="416" y="576" width="192" height="128" fill="#1a237e"/>
-        
-        <!-- Left Wing -->
         <rect x="160" y="576" width="192" height="128" fill="#1a237e"/>
         <rect x="160" y="768" width="192" height="128" fill="#1a237e"/>
-        
-        <!-- Right Wing -->
         <rect x="672" y="576" width="192" height="128" fill="#1a237e"/>
         <rect x="672" y="768" width="192" height="128" fill="#1a237e"/>
-        
-        <!-- Windows Row 1 -->
         <rect x="416" y="384" width="192" height="128" fill="#1a237e"/>
         <rect x="160" y="384" width="192" height="128" fill="#1a237e"/>
         <rect x="672" y="384" width="192" height="128" fill="#1a237e"/>
-        
-        <!-- Windows Row 2 -->
         <rect x="416" y="192" width="192" height="128" fill="#1a237e"/>
         <rect x="160" y="192" width="192" height="128" fill="#1a237e"/>
         <rect x="672" y="192" width="192" height="128" fill="#1a237e"/>
-        
-        <!-- Base Strip -->
         <rect x="64" y="96" width="896" height="32" fill="#ff7043"/>
-        
-        <!-- Roof Red Banner -->
         <rect x="0" y="0" width="1024" height="64" fill="#ff7043"/>
-        
-        <!-- Ground Platforms -->
         <circle cx="128" cy="960" r="96" fill="#3AAD73"/>
         <circle cx="896" cy="960" r="128" fill="#3AAD73"/>
       </svg>
@@ -312,6 +297,35 @@
 
   </div>
 </section>
+
+<!-- Inline Script for Responsiveness -->
+<script>
+  function adjustClubSection() {
+    const isMobile = window.innerWidth <= 768;
+    const textDiv = document.getElementById('club-text');
+    const cta = document.getElementById('cta-button');
+    const svgDiv = document.getElementById('club-building');
+
+    if (isMobile) {
+      textDiv.style.textAlign = "center";
+      textDiv.querySelector('h2').style.textAlign = "center";
+      textDiv.querySelector('p').style.textAlign = "center";
+      cta.style.display = "inline-block";
+      cta.style.margin = "0 auto";
+      svgDiv.style.display = "none";
+    } else {
+      textDiv.style.textAlign = "left";
+      textDiv.querySelector('h2').style.textAlign = "left";
+      textDiv.querySelector('p').style.textAlign = "left";
+      cta.style.margin = "unset";
+      svgDiv.style.display = "block";
+    }
+  }
+
+  window.addEventListener('load', adjustClubSection);
+  window.addEventListener('resize', adjustClubSection);
+</script>
+
 
 <!-- =================== End of V Club Landmark Section =================== -->
 
