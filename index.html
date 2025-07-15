@@ -651,54 +651,99 @@
 <section id="contact" style="scroll-margin-top: 80px;">
   <section style="padding: 60px 20px; background: #f9f9f9;">
     <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+
       <h2 style="font-size: 2em; color: #0a2a73; margin-bottom: 20px;">Get in Touch</h2>
       <p style="color: #333; margin-bottom: 30px;">
         Use the form below to reach out to us for <strong>VSTREET Club invitations</strong>, <strong>joining our team</strong>, or <strong>business queries</strong>.
       </p>
-<form id="contactForm" style="display: flex; flex-direction: column; gap: 16px;">
-  <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-  <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-  <input type="text" name="phone" placeholder="Your Contact Number" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-  <textarea name="message" rows="4" placeholder="Your Message" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
-  <button type="submit" style="padding: 14px; background: #0a2a73; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
-    Submit
-  </button>
-</form>
 
-<!-- Success message container -->
-<p id="formStatus" style="margin-top: 20px; color: green; font-weight: bold; display: none;">
-  ✅ Thank you! Your submission has been received.  
-  <br>We will review your message and get back to you shortly.
-</p>
+      <!-- Contact Form -->
+      <form id="contactForm" style="display: flex; flex-direction: column; gap: 16px;">
+        <input type="text" name="name" placeholder="Your Name" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+        <input type="email" name="email" placeholder="Your Email" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+        <input type="text" name="phone" placeholder="Your Contact Number" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+        <textarea name="message" rows="4" placeholder="Your Message" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
+        <button id="submitBtn" type="submit"
+          style="padding: 14px; background: #0a2a73; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+          Submit
+        </button>
+      </form>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // prevent page reload
-    const form = e.target;
-    const formData = new FormData(form);
+      <!-- Progress Bar -->
+      <div id="progressContainer"
+        style="width:100%; background:#ddd; border-radius:6px; margin-top:20px; height:8px; display:none; overflow:hidden;">
+        <div id="progressBar"
+          style="height:100%; width:0%; background:linear-gradient(to right,#0a2a73,#002147); border-radius:6px;">
+        </div>
+      </div>
 
-    fetch('https://script.google.com/macros/s/AKfycbxBQwPQ44stB0N1V8wXEp9OAUnBGpTHDyXUu8Xhm123VTRg8bAwEx_b77_znqDA4PNg/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(text => {
-      form.reset();
-      const statusEl = document.getElementById('formStatus');
-      statusEl.style.display = 'block';
-      statusEl.innerHTML = '✅ Thank you! Your submission has been received.<br>We will review your message and get back to you shortly.';
-    })
-    .catch(error => {
-      alert('❌ There was an error submitting the form. Please try again.');
-      console.error('Error!', error.message);
-    });
-  });
-</script>
+      <!-- Success and Error Messages -->
+      <p id="formStatus" style="margin-top: 20px; color: green; font-weight: bold; display: none;"></p>
+      <p id="formError" style="margin-top: 20px; color: red; font-weight: bold; display: none;"></p>
 
+      <script>
+        const form = document.getElementById('contactForm');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const statusEl = document.getElementById('formStatus');
+        const errorEl = document.getElementById('formError');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          // reset messages
+          statusEl.style.display = 'none';
+          errorEl.style.display = 'none';
+
+          // show and animate progress bar
+          progressContainer.style.display = 'block';
+          progressBar.style.width = '0%';
+          let width = 0;
+          const interval = setInterval(() => {
+            if (width >= 90) {
+              clearInterval(interval);
+            } else {
+              width += 5;
+              progressBar.style.width = width + '%';
+            }
+          }, 100);
+
+          const formData = new FormData(form);
+          fetch('https://script.google.com/macros/s/AKfycbxBQwPQ44stB0N1V8wXEp9OAUnBGpTHDyXUu8Xhm123VTRg8bAwEx_b77_znqDA4PNg/exec', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => response.text())
+            .then(text => {
+              clearInterval(interval);
+              progressBar.style.width = '100%';
+              setTimeout(() => {
+                progressContainer.style.display = 'none';
+                progressBar.style.width = '0%';
+              }, 500);
+
+              form.reset();
+              statusEl.innerHTML = '✅ Thank you! Your submission has been received.<br>We will review your message and get back to you shortly.';
+              statusEl.style.display = 'block';
+            })
+            .catch(error => {
+              clearInterval(interval);
+              progressContainer.style.display = 'none';
+              progressBar.style.width = '0%';
+              errorEl.innerHTML = '❌ There was an error submitting the form. Please try again.';
+              errorEl.style.display = 'block';
+              console.error('Error!', error.message);
+            });
+        });
+      </script>
 
     </div>
   </section>
 </section>
+
 <!-- ===================== End Contact Section ===================== -->
 
 
