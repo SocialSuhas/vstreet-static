@@ -476,73 +476,153 @@
   background: repeating-linear-gradient(
       45deg,
       #0a2a73,
-      #0a2a73 20px,
-      #1a237e 20px,
-      #1a237e 40px
+      #0a2a73 30px,
+      #1a237e 30px,
+      #1a237e 60px
     );
-  padding: 60px 20px;
+  padding: 180px 20px;
   color: #ffffff;
   overflow: hidden;
 ">
-  <div style="max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
 
-    <!-- Heading -->
-    <h2 style="font-size: 2.4em; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color:#ff7043;">
+  <!-- Background Wheels (more spokes) -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:0.08;">
+    <!-- A reusable wheel -->
+    <svg viewBox="0 0 100 100" width="140" height="140" style="position:absolute; top:40px; left:50px;">
+      <circle cx="50" cy="50" r="42" stroke="#fff" stroke-width="6" fill="none"/>
+      <circle cx="50" cy="50" r="4" fill="#fff"/>
+      <g stroke="#fff" stroke-width="2">
+        <line x1="50" y1="8" x2="50" y2="92"/>
+        <line x1="8" y1="50" x2="92" y2="50"/>
+        <line x1="20" y1="20" x2="80" y2="80"/>
+        <line x1="80" y1="20" x2="20" y2="80"/>
+        <line x1="35" y1="10" x2="65" y2="90"/>
+        <line x1="10" y1="35" x2="90" y2="65"/>
+        <line x1="65" y1="10" x2="35" y2="90"/>
+        <line x1="10" y1="65" x2="90" y2="35"/>
+      </g>
+    </svg>
+
+    <svg viewBox="0 0 100 100" width="160" height="160" style="position:absolute; top:60px; right:80px;">
+      <circle cx="50" cy="50" r="42" stroke="#fff" stroke-width="6" fill="none"/>
+      <circle cx="50" cy="50" r="4" fill="#fff"/>
+      <g stroke="#fff" stroke-width="2">
+        <line x1="50" y1="8" x2="50" y2="92"/>
+        <line x1="8" y1="50" x2="92" y2="50"/>
+        <line x1="20" y1="20" x2="80" y2="80"/>
+        <line x1="80" y1="20" x2="20" y2="80"/>
+        <line x1="35" y1="10" x2="65" y2="90"/>
+        <line x1="10" y1="35" x2="90" y2="65"/>
+        <line x1="65" y1="10" x2="35" y2="90"/>
+        <line x1="10" y1="65" x2="90" y2="35"/>
+      </g>
+    </svg>
+
+    <svg viewBox="0 0 100 100" width="120" height="120" style="position:absolute; bottom:60px; left:100px;">
+      <circle cx="50" cy="50" r="42" stroke="#fff" stroke-width="6" fill="none"/>
+      <circle cx="50" cy="50" r="4" fill="#fff"/>
+      <g stroke="#fff" stroke-width="2">
+        <line x1="50" y1="8" x2="50" y2="92"/>
+        <line x1="8" y1="50" x2="92" y2="50"/>
+        <line x1="20" y1="20" x2="80" y2="80"/>
+        <line x1="80" y1="20" x2="20" y2="80"/>
+        <line x1="35" y1="10" x2="65" y2="90"/>
+        <line x1="10" y1="35" x2="90" y2="65"/>
+        <line x1="65" y1="10" x2="35" y2="90"/>
+        <line x1="10" y1="65" x2="90" y2="35"/>
+      </g>
+    </svg>
+
+    <svg viewBox="0 0 100 100" width="140" height="140" style="position:absolute; bottom:50px; right:120px;">
+      <circle cx="50" cy="50" r="42" stroke="#fff" stroke-width="6" fill="none"/>
+      <circle cx="50" cy="50" r="4" fill="#fff"/>
+      <g stroke="#fff" stroke-width="2">
+        <line x1="50" y1="8" x2="50" y2="92"/>
+        <line x1="8" y1="50" x2="92" y2="50"/>
+        <line x1="20" y1="20" x2="80" y2="80"/>
+        <line x1="80" y1="20" x2="20" y2="80"/>
+        <line x1="35" y1="10" x2="65" y2="90"/>
+        <line x1="10" y1="35" x2="90" y2="65"/>
+        <line x1="65" y1="10" x2="35" y2="90"/>
+        <line x1="10" y1="65" x2="90" y2="35"/>
+      </g>
+    </svg>
+  </div>
+
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+    <h2 style="font-size: 2.6em; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; color:#FF9933;">
       VStreet Foundry
     </h2>
 
-    <!-- Description -->
-    <p style="font-size: 1.2em; line-height: 1.6; max-width: 800px; margin: 0 auto 50px auto; color: #f5f5f5;">
-      As challenging as creating and selling life‑saving medicine with honest intentions, our work has the potential to shape the future. It involves deep research and constant interaction with diverse people. We have built a unique tri‑road model to guide this journey.
+    <p style="font-size: 1.3em; line-height: 1.7; max-width: 850px; margin: 0 auto 60px auto; color: #f5f5f5;">
+      As challenging as creating and selling life‑saving medicine with honest intentions, our work has the potential to shape the future. It involves deep research and constant interaction with diverse people. We’ve built a unique tri‑road model to guide this journey.
     </p>
 
-    <!-- Three Cards -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-      
-      <!-- Card 1 -->
-      <div style="flex: 1 1 280px; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" style="margin-bottom: 15px;">
-          <path fill="#ff9800" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3z"/>
-          <path fill="#4caf50" d="M8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3z"/>
-          <path fill="#2196f3" d="M8 13c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-          <path fill="#9c27b0" d="M16 13c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-        </svg>
-        <h3 style="font-size: 1.3em; margin-bottom: 12px; color: #ffffff;">Human Needs & Models</h3>
-        <p style="color: #f5f5f5; font-size: 1em; line-height: 1.6;">
-          We understand evolving human needs and build business models that support these changes.
+    <!-- Cards -->
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <style>
+        .foundry-card {
+          background: #ffffff;
+          color: #333;
+          border-radius: 14px;
+          padding: 35px 25px;
+          flex: 1 1 280px;
+          max-width: 320px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          text-align: center;
+          border: 4px solid transparent;
+          background-clip: padding-box;
+          position: relative;
+        }
+        .foundry-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          padding: 2px;
+          border-radius: 14px;
+          background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(200,200,200,0.3));
+          -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+        }
+        .foundry-card-number {
+          font-size: 60px;
+          font-weight: bold;
+          color: #FF9933;
+          margin-bottom: 18px;
+        }
+      </style>
+
+      <div class="foundry-card">
+        <div class="foundry-card-number">1</div>
+        <h3 style="font-size:1.3em; margin-bottom:10px; color:#0a2a73;">Understand Human Needs</h3>
+        <p style="font-size:1em; color:#555;">
+          We study evolving needs and create business models that support meaningful changes in people’s lives.
         </p>
       </div>
 
-      <!-- Card 2 -->
-      <div style="flex: 1 1 280px; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
-        <!-- Colorful icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" style="margin-bottom: 15px;">
-          <path fill="#3f51b5" d="M21 6h-3V3c0-1.1-.9-2-2-2H8C6.9 1 6 1.9 6 3v3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 3h8v3H8V3zm13 17H3V8h3v3h12V8h3v12z"/>
-          <circle cx="7" cy="13" r="2" fill="#ff9800"/>
-          <circle cx="12" cy="13" r="2" fill="#4caf50"/>
-          <circle cx="17" cy="13" r="2" fill="#e91e63"/>
-        </svg>
-        <h3 style="font-size: 1.3em; margin-bottom: 12px; color: #ffffff;">Media & Info Value</h3>
-        <p style="color: #f5f5f5; font-size: 1em; line-height: 1.6;">
-          We create ideas that bring more value to the media and information ecosystem, drawing resources from traditional businesses.
+      <div class="foundry-card">
+        <div class="foundry-card-number">2</div>
+        <h3 style="font-size:1.3em; margin-bottom:10px; color:#0a2a73;">Add Value to Media</h3>
+        <p style="font-size:1em; color:#555;">
+          We work on ideas that enrich the media and information ecosystem while drawing resources from traditional businesses.
         </p>
       </div>
 
-      <!-- Card 3 -->
-      <div style="flex: 1 1 280px; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" style="margin-bottom: 15px;">
-          <path fill="#f44336" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 15c-1.66 0-3-1.34-3-3 0-.65.21-1.26.56-1.76L12 5.5l2.44 5.74c.35.5.56 1.11.56 1.76 0 1.66-1.34 3-3 3z"/>
-        </svg>
-        <h3 style="font-size: 1.3em; margin-bottom: 12px; color: #ffffff;">Lawful Implementation</h3>
-        <p style="color: #f5f5f5; font-size: 1em; line-height: 1.6;">
-          We work with legislature and legal systems to implement ideas in a way that involves everyone — a true win‑win.
+      <div class="foundry-card">
+        <div class="foundry-card-number">3</div>
+        <h3 style="font-size:1.3em; margin-bottom:10px; color:#0a2a73;">Work with Systems</h3>
+        <p style="font-size:1em; color:#555;">
+          We collaborate with legislature and legal systems to lawfully implement changes — a true win‑win for all.
         </p>
       </div>
-
     </div>
   </div>
 </section>
 <!-- ===================== End VStreet Foundry Section ===================== -->
+
 
 
 <section style="padding: 60px 20px; background: #f9f9f9;">
